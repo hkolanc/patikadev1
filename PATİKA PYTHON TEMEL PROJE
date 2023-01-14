@@ -1,0 +1,22 @@
+#first example
+def flatten_list(lst):
+    flattened_list = []
+    for i in lst:
+        if type(i) == list:
+            flattened_list.extend(flatten_list(i))
+        else:
+            flattened_list.append(i)
+    return flattened_list
+    
+    flatten_list([[1,'a',['cat'],2],[[[3]],'dog'],4,5])
+
+
+
+#secand example
+def reverse_list(lst):
+  if type(lst)==list:
+    return [reverse_list(i) for i in reversed(lst)]
+  else:
+    return lst
+
+reverse_list([[1, 2], [3, 4], [5, 6, 7]])
